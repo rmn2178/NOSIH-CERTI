@@ -37,7 +37,7 @@ Institutions issue tamper-evident certificates signed directly via MetaMask; any
 
 <br />
 
-<img src="assets/readme/nosih-hero.png" alt="NOSIH CERT Hero Banner — Decentralized Certificate Authentication on Polygon Amoy" width="100%" />
+<img src="assets/readme/nosih-hero.gif" alt="NOSIH CERT Animated Hero Cover — Bold Official Logo, Live Cryptographic Telemetry & On-Chain Proof Stream" width="100%" />
 
 </div>
 
@@ -78,7 +78,7 @@ Institutions issue tamper-evident certificates signed directly via MetaMask; any
 In NOSIH, **the blockchain is the sole authority**: a certificate is authentic only when its on-chain record in `CertificateRegistry.sol` on **Polygon Amoy (`chainId: 80002`)** matches the approved document bytes and canonical metadata, its issuer wallet is cryptographically bound to an approved institution, and the record is neither revoked nor expired. The relational database (Supabase Postgres) serves strictly as a secondary metadata index, and Pinata IPFS stores only AES-256-GCM encrypted ciphertext.
 
 <div align="center">
-  <img src="assets/readme/nosih-overview.png" alt="NOSIH Three Stores, Three Jobs — Concept & Security Overview Infographic" width="100%" />
+  <img src="assets/readme/nosih-overview-anim.gif" alt="NOSIH Animated Three Stores, Three Jobs Data Partitioning Flow" width="100%" />
 </div>
 
 ### Verified Architecture Snapshot
@@ -122,6 +122,10 @@ NOSIH resolves these trade-offs through **strict separation of duties across thr
 3. **Human-in-the-Loop, Text-Only AI Extraction**
    - Digital PDFs are parsed locally via `pdf-parse`; scanned PDFs are rendered and OCR'd locally via `Tesseract.js v7`. Only cleaned plain text is sent to Google Gemini (`gemini-3.6-flash`), which pre-fills the review form. Every field requires explicit human approval before hashing or signing.
 
+<div align="center">
+  <img src="assets/readme/nosih-overview.png" alt="NOSIH Three Stores, Three Jobs — Hash Families & Role Custody Overview" width="100%" />
+</div>
+
 ### Implementation Status Transparency
 
 | Status | Scope in This Repository |
@@ -142,6 +146,10 @@ NOSIH resolves these trade-offs through **strict separation of duties across thr
 - **How it works**: `POST /api/certificates/issue/prepare` validates JWT auth, institution approval, active bound wallet, PDF magic bytes/size/page count, and duplicate guards, then computes hashes, encrypts &amp; pins the PDF, and writes a 30-minute `issuance_intents` row. The browser signs `issueCertificate` in MetaMask, and `POST /api/certificates/issue/confirm` independently verifies the on-chain receipt (`status === 1`, `to === CONTRACT_ADDRESS`, `chainId === 80002`) and every `CertificateIssued` event field against the intent before committing the authoritative certificate row.
 - **Why it matters**: Eliminates server-side issuance key theft and makes confirmation idempotent and retry-safe (returning HTTP `202` while a transaction is pending).
 
+<div align="center">
+  <img src="assets/readme/nosih-metamask-handshake.gif" alt="NOSIH Animated MetaMask Issuance Handshake — prepare, sign, confirm" width="100%" />
+</div>
+
 ### 2. Chain-First Public Verification (10 Explicit Verdicts)
 - **How it works**: `GET /api/verify/:certificateId` (public, rate-limited at 60 req/min/IP) queries `CertificateRegistry` on Polygon Amoy first, cross-checks Supabase metadata, and computes one of 10 explicit verdicts — including `blockchain-unavailable` (HTTP `503`, Indeterminate) whenever the RPC is unreachable.
 - **Why it matters**: A database row alone can never certify a credential, and verifiers never need to create an account.
@@ -153,6 +161,10 @@ NOSIH resolves these trade-offs through **strict separation of duties across thr
 ### 4. Privacy-First Text-Only AI Extraction
 - **How it works**: `pdfParser.js` extracts the JavaScript text layer (`PDF_TEXT_MIN_CHARS = 200`, `MAX_PDF_PAGES = 10`). If insufficient, pages render via `pdfjs-dist` + `pdf-to-png-converter` + `sharp` and run local `Tesseract.js v7` OCR behind a concurrency semaphore. `gemini.js` accepts strings only — image and PDF parts cannot be transmitted even by accident.
 - **Why it matters**: Cuts manual registrar typing across 17 base fields and 10 credential templates while keeping raw document pixels strictly inside the server boundary.
+
+<div align="center">
+  <img src="assets/readme/nosih-ai-ocr-anim.gif" alt="NOSIH Animated Text-Only AI Extraction Pipeline — Local Tesseract OCR to Gemini" width="100%" />
+</div>
 
 ### 5. Three-Family Cryptography &amp; Zero-PII Ledger
 - **How it works**: Low-entropy PII (`holderIdentityHash`, `institutionIdHash`, `revocationReasonHash`) uses `HMAC-SHA256` with server-side `HASH_PEPPER`; random IDs (`CERT-XXXXXXXX`, `INST-XXXXXXXX`) map to `bytes32` via `keccak256`; exact PDF bytes and canonical JSON use `SHA-256`; PDFs use `AES-256-GCM` with `DOCUMENT_ENC_KEY`.
@@ -514,6 +526,12 @@ No GitHub Actions CI workflows are configured yet; instead, NOSIH ships an exten
 <p align="center"><img src="assets/readme/nosih-divider.svg" alt="" width="100%" /></p>
 
 ## 14. Before vs. After
+
+<div align="center">
+  <img src="assets/readme/nosih-before-after-anim.gif" alt="NOSIH Animated Live Tamper Simulation — Legacy Portal vs NOSIH Chain-First Architecture" width="100%" />
+</div>
+
+<br />
 
 <div align="center">
   <img src="assets/readme/nosih-before-after.png" alt="Before vs After Comparison — Traditional Paper and Centralized Portals vs NOSIH Chain-First Architecture" width="100%" />
