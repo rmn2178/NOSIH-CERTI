@@ -2,53 +2,57 @@
 
 <a name="readme-top"></a>
 
-<img src="assets/readme/nosih-logo.svg" alt="NOSIH Official Logo" width="84" height="84" />
+<img src="assets/readme/nosih-logo.svg" alt="NOSIH Official Logo" width="88" height="88" />
 
 # NOSIH
 
-<img src="assets/readme/nosih-tagline.svg" alt="NOSIH — Chain-First Credential Verification, MetaMask-Signed Issuance, Zero PII On-Chain" width="820" />
-
-**Decentralized certificate authentication for academic and professional credentials.**<br />
-Institutions issue tamper-evident certificates signed directly via MetaMask; anyone verifies them against the Polygon Amoy blockchain — **no account required**.
+<img src="assets/readme/nosih-tagline.svg" alt="NOSIH — Years of Effort Deserve Proof No One Can Fake" width="860" />
 
 <p>
-  <img src="https://img.shields.io/badge/Solidity-0.8.20-16181D?style=for-the-badge&logo=solidity&logoColor=white" alt="Solidity 0.8.20" />
-  <img src="https://img.shields.io/badge/Polygon_Amoy-Chain_80002-3D8B6E?style=for-the-badge&logo=polygon&logoColor=white" alt="Polygon Amoy 80002" />
-  <img src="https://img.shields.io/badge/Node.js-22.x_ESM-3E444C?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js 22" />
-  <img src="https://img.shields.io/badge/React-18.2-16181D?style=for-the-badge&logo=react&logoColor=white" alt="React 18" />
-  <img src="https://img.shields.io/badge/Storage-AES--256--GCM_+_IPFS-3E444C?style=for-the-badge&logo=ipfs&logoColor=white" alt="AES-256-GCM IPFS" />
-  <img src="https://img.shields.io/badge/AI_OCR-Local_Tesseract_+_Text--Only_Gemini-C4943A?style=for-the-badge&logo=googlegemini&logoColor=white" alt="Text-Only Gemini" />
-  <img src="https://img.shields.io/badge/Contract_SPDX-MIT_(No_Root_LICENSE)-6E7681?style=for-the-badge" alt="Contract SPDX MIT, No Root LICENSE" />
+  <img src="https://img.shields.io/badge/Solidity-0.8.20-000000?style=for-the-badge&logo=solidity&logoColor=white" alt="Solidity 0.8.20" />
+  <img src="https://img.shields.io/badge/Polygon_Amoy-Chain_80002-1F1F1F?style=for-the-badge&logo=polygon&logoColor=white" alt="Polygon Amoy 80002" />
+  <img src="https://img.shields.io/badge/Node.js-22.x_ESM-2E2E2E?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js 22" />
+  <img src="https://img.shields.io/badge/React-18.2-000000?style=for-the-badge&logo=react&logoColor=white" alt="React 18" />
+  <img src="https://img.shields.io/badge/Vault-AES--256--GCM_+_IPFS-1F1F1F?style=for-the-badge&logo=ipfs&logoColor=white" alt="AES-256-GCM IPFS" />
+  <img src="https://img.shields.io/badge/OCR_+_AI-Tesseract_+_Text--Only_Gemini-3A3A3A?style=for-the-badge&logo=googlegemini&logoColor=white" alt="Text-Only Gemini" />
+  <img src="https://img.shields.io/badge/Contract_SPDX-MIT_(No_Root_LICENSE)-555555?style=for-the-badge" alt="Contract SPDX MIT, No Root LICENSE" />
 </p>
 
 <p>
   <a href="#02-what-is-nosih">Overview</a> ·
-  <a href="#03-the-problem">Problem</a> ·
+  <a href="#03-the-problem">The Problem</a> ·
+  <a href="#04-our-approach">Verification Ladder</a> ·
   <a href="#05-key-features">Features</a> ·
   <a href="#06-system-architecture">Architecture</a> ·
   <a href="#07-how-it-works">Pipeline</a> ·
-  <a href="#08-technology-stack">Tech Stack</a> ·
-  <a href="#10-installation-and-setup">Quick Start</a> ·
-  <a href="#11-usage-guide">API &amp; Usage</a> ·
-  <a href="#13-performance-testing-and-verification-gates">Gates</a> ·
+  <a href="#08-technology-stack">Stack</a> ·
+  <a href="#10-installation-and-setup">Install</a> ·
+  <a href="#13-performance-testing-and-verification-gates">Commands &amp; Gates</a> ·
   <a href="#15-roadmap">Roadmap</a> ·
   <a href="#18-faq">FAQ</a>
 </p>
 
 <br />
 
-<img src="assets/readme/nosih-hero.gif" alt="NOSIH CERT Animated Hero Cover — Bold Official Logo, Live Cryptographic Telemetry & On-Chain Proof Stream" width="100%" />
+<img src="assets/readme/nosih-hero.gif" alt="NOSIH Animated Cover — Bold Official Logo, Tamper-Proof Diploma Shield & Three-Pillar Crypto Architecture" width="100%" />
+
+<br />
+
+### **Years of study. One degree. One forged PDF can fake it in thirty seconds.**
+### **NOSIH makes it mathematically impossible.**
+
+`0 PII on-chain` · `1-byte tamper detection` · `10 chain-first verdicts` · `0 server issuance keys` · `zero-account public verify`
 
 </div>
 
 <br />
 
 <details>
-<summary><strong>Table of Contents</strong> — Click to expand full navigation</summary>
+<summary><strong>Table of Contents</strong> — Click to jump to any section</summary>
 
 1. [What Is NOSIH?](#02-what-is-nosih)
 2. [The Problem](#03-the-problem)
-3. [Our Approach &amp; Cryptographic Design](#04-our-approach)
+3. [Our Approach &amp; The Verification Ladder](#04-our-approach)
 4. [Key Implemented Features](#05-key-features)
 5. [System Architecture](#06-system-architecture)
 6. [How It Works — End-to-End Pipeline](#07-how-it-works)
@@ -73,64 +77,63 @@ Institutions issue tamper-evident certificates signed directly via MetaMask; any
 
 ## 02. What Is NOSIH?
 
-**NOSIH** is a chain-first decentralized credential issuance, verification, and tamper-detection platform for academic degrees, diplomas, transcripts, professional certifications, and institutional credentials.
+**NOSIH** is a decentralized certificate authentication platform for academic and professional credentials. Institutions issue tamper-evident certificates signed directly from their own **MetaMask** wallet onto **Polygon Amoy (`chainId: 80002`)**; anyone — employers, universities, licensing boards, or students — verifies them in seconds with **no account required**.
 
-In NOSIH, **the blockchain is the sole authority**: a certificate is authentic only when its on-chain record in `CertificateRegistry.sol` on **Polygon Amoy (`chainId: 80002`)** matches the approved document bytes and canonical metadata, its issuer wallet is cryptographically bound to an approved institution, and the record is neither revoked nor expired. The relational database (Supabase Postgres) serves strictly as a secondary metadata index, and Pinata IPFS stores only AES-256-GCM encrypted ciphertext.
+The rule is simple: **the blockchain is the authority.** A certificate is authentic only when its on-chain record in `CertificateRegistry.sol` matches the approved document bytes and canonical metadata, its issuer wallet is bound to an approved institution, and the record is neither revoked nor expired.
 
 <div align="center">
-  <img src="assets/readme/nosih-overview-anim.gif" alt="NOSIH Animated Three Stores, Three Jobs Data Partitioning Flow" width="100%" />
+  <img src="assets/readme/nosih-overview-anim.gif" alt="NOSIH Animated Three Stores, Three Jobs — Approved Credential Cryptographic Partitioning" width="100%" />
 </div>
 
-### Verified Architecture Snapshot
+### Verified Architecture Scorecard
 
-| Metric | Value | Source in Repository |
+| Metric | Verified Value | Source in Repository |
 | :--- | :--- | :--- |
-| **On-Chain PII Fields** | **0** (hashes, CID &amp; lifecycle flags only) | `contracts/CertificateRegistry.sol` |
+| **On-Chain PII Fields** | **0** (hashes, encrypted CID &amp; lifecycle flags only) | `contracts/CertificateRegistry.sol` |
+| **Server-Side Issuance Keys** | **0** (MetaMask-only `BrowserProvider` signing) | `backend/services/blockchain.js` |
 | **Verification Verdicts** | **10** explicit chain-authoritative states | `backend/services/verification.js` |
 | **Tamper-Check Modes** | **2** (Mode A stored ciphertext · Mode B PDF upload) | `backend/routes/verify.js` |
-| **AI Extraction Schema** | **17** base fields + **10** category templates | `backend/services/certificateTemplates.js` |
+| **AI Extraction Schema** | **17** base fields + **10** category templates (text-only) | `backend/services/certificateTemplates.js` |
 | **RLS-Locked Tables** | **6** Postgres tables (`0` public policies) | `backend/supabase/schema.sql` |
-| **Cryptographic Primitives** | **3** hash families + **AES-256-GCM** | `backend/services/certificateIdentity.js` |
-| **Verification Test Suites** | **3** Hardhat suites + **17** npm check gates | `test/` &amp; `package.json` |
+| **Verification Test Suites** | **3** Hardhat suites + **17** local npm gates | `test/` &amp; `package.json` |
 | **Deployed Testnet Contract** | `0xA9334Eb5E1c2811dcAE32880702092a7A7555680` | `deployments/amoy.json` (Amoy `80002`) |
 
 <p align="center"><img src="assets/readme/nosih-divider.svg" alt="" width="100%" /></p>
 
 ## 03. The Problem
 
-Academic and professional credentials remain high-value targets for forgery, silent grade manipulation, and institutional impersonation. Existing verification systems fail along five structural axes:
+<div align="center">
+  <img src="assets/readme/nosih-problem-story.gif" alt="Visual Storytelling — Paper and Centralized Portals Break Trust vs NOSIH Mathematical Proof" width="100%" />
+</div>
 
-- **Easily Forged Paper &amp; Unverified PDFs**: Stamps, signatures, and digital PDFs can be altered in seconds without leaving any visual artifact detectable by an employer or admissions officer.
-- **Centralized Single Points of Trust**: Traditional institutional portals rely on a single database and admin login. If a database row is silently altered or an admin account is compromised, verifiers receive a false positive.
-- **Server-Side Key Custody Risk**: Platforms that hold an `ISSUER_PRIVATE_KEY` on a backend server collapse institutional accountability — a single server compromise allows arbitrary forged issuances.
-- **Public Ledger Privacy Leaks**: Naive blockchain credential systems write student names, roll numbers, or raw PDFs on-chain or to public IPFS, permanently exposing personally identifiable information (PII).
-- **Third-Party AI Data Exposure**: Uploading raw certificate images or base64 PDFs to external vision LLMs leaks sensitive identity documents outside the issuer's security boundary.
+- **Visual Forgery Leaves Zero Trace**: Paper seals and digital PDFs can be edited in seconds without any visual clue for an employer or admissions officer.
+- **Centralized Portals Trust One Login**: A single compromised admin account or silently altered database row turns a fake credential into a "verified" one.
+- **Server-Side Keys Break Custody**: Platforms storing an `ISSUER_PRIVATE_KEY` on a backend server allow a single server breach to forge credentials for any institution.
+- **Naive Blockchain Leaks PII**: Putting student names, roll numbers, or raw PDFs on-chain or public IPFS permanently exposes personal data.
+- **Vision LLMs Leak Documents**: Sending raw certificate images or base64 PDFs to external AI APIs pushes sensitive identity records outside the institution's boundary.
 
 <p align="center"><img src="assets/readme/nosih-divider.svg" alt="" width="100%" /></p>
 
 ## 04. Our Approach
 
-NOSIH resolves these trade-offs through **strict separation of duties across three stores**, **non-custodial issuer signing**, and **fail-closed verification**:
-
-1. **Three Stores, Three Jobs**
-   - **Polygon Amoy (`CertificateRegistry.sol`)**: Anchors keyed hashes (`certificateIdHash`, `institutionIdHash`, `holderIdentityHash`, `documentHash`, `metadataHash`, `revocationReasonHash`), encrypted `ipfsCID`, issuer address (`msg.sender`), timestamps (`issuedAt`, `expiresAt`), `revoked` flag, and `supersedesCertificateIdHash`.
-   - **Pinata IPFS + Supabase Private Storage Mirror**: Stores AES-256-GCM encrypted PDF ciphertext only. Reads check the private `certificates` bucket first and fall back to a 5-gateway `Promise.any` IPFS race (Pinata, `ipfs.io`, `dweb.link`, etc.) with background cache backfill.
-   - **Supabase Postgres (RLS Enabled, Zero Public Policies)**: Indexes institutions, staff users, bound wallets, approved metadata, 30-minute issuance intents, and private audit/revocation logs. Reachable exclusively through the backend's `SUPABASE_SERVICE_ROLE_KEY`.
-2. **Non-Custodial Issuance, Scoped Revocation**
-   - Issuance is signed **exclusively by the issuer's MetaMask wallet** (`ethers` v6 `BrowserProvider`). Each issuer wallet is bound on-chain to exactly one `institutionIdHash` (`issuerInstitution[msg.sender]`), preventing cross-institution issuance at the EVM level.
-   - Revocation is the **only server-side chain write**, executed via a dedicated `REVOKE_PRIVATE_KEY` holding `REVOKER_ROLE`. The human-readable reason remains private in `certificate_events`, while only its peppered HMAC hash is recorded on-chain.
-3. **Human-in-the-Loop, Text-Only AI Extraction**
-   - Digital PDFs are parsed locally via `pdf-parse`; scanned PDFs are rendered and OCR'd locally via `Tesseract.js v7`. Only cleaned plain text is sent to Google Gemini (`gemini-3.6-flash`), which pre-fills the review form. Every field requires explicit human approval before hashing or signing.
+Before NOSIH ever calls a certificate authentic, it climbs a **fail-closed, chain-first verification ladder**. If the blockchain cannot be reached, NOSIH refuses to guess and returns `HTTP 503` (`blockchain-unavailable`) — never "valid from the database alone."
 
 <div align="center">
-  <img src="assets/readme/nosih-overview.png" alt="NOSIH Three Stores, Three Jobs — Hash Families & Role Custody Overview" width="100%" />
+  <img src="assets/readme/nosih-ladder.gif" alt="The Chain-First Verification Ladder — 5 Fail-Closed Steps on Polygon Amoy" width="100%" />
 </div>
+
+### Three Stores · Three Hash Families · Zero Shortcuts
+
+- **Polygon Amoy (`CertificateRegistry.sol`)**: Holds only keyed hashes, document/metadata SHA-256 hashes, encrypted `ipfsCID`, bound issuer address, timestamps, `revoked` flag, and `supersedesCertificateIdHash`.
+- **Pinata IPFS + Supabase Private Storage**: Stores **AES-256-GCM ciphertext only**. Reads hit the private `certificates` bucket first and fall back to a 5-gateway `Promise.any` IPFS race with background backfill.
+- **Supabase Postgres (RLS ON, 0 Public Policies)**: Stores institutions, users, bound wallets, approved metadata, 30-minute issuance intents, and private revocation reasons — accessible only via the backend's `SUPABASE_SERVICE_ROLE_KEY`.
+- **Three Hash Families**: `HMAC-SHA256` with server-side `HASH_PEPPER` (holder, institution, revocation reason), `keccak256` (random `CERT-XXXXXXXX` / `INST-XXXXXXXX` IDs), and `SHA-256` (exact PDF bytes &amp; canonical JSON).
 
 ### Implementation Status Transparency
 
 | Status | Scope in This Repository |
 | :--- | :--- |
-| **Implemented &amp; Verified** | `CertificateRegistry.sol` (deployed on Polygon Amoy), MetaMask `prepare → sign → confirm` handshake, 10-verdict chain-first public verifier, Mode A &amp; Mode B tamper checks, text-only PDF/OCR → Gemini extraction, 6-table RLS schema &amp; additive migration, RBAC (`platform_admin`, `institution_admin`, `issuer`, `auditor`, `public`), revocation &amp; supersede reissuance, QR PNG generation, Vercel same-origin wiring, 3 Hardhat suites, and `check:p2`–`check:p8` gates. |
+| **Implemented &amp; Verified** | `CertificateRegistry.sol` (deployed on Polygon Amoy), MetaMask `prepare → sign → confirm` handshake, 10-verdict chain-first public verifier, Mode A &amp; Mode B tamper checks, text-only PDF/OCR → Gemini extraction, 6-table RLS schema &amp; additive migration, 5-tier RBAC, revocation &amp; supersede reissuance, QR PNG generation, Vercel same-origin wiring, 3 Hardhat suites, and `check:p2`–`check:p8` gates. |
 | **In Progress / Operational** | Automated GitHub Actions CI workflows, adding an explicit root `LICENSE` file, retiring legacy land-deed presentation/helper scripts (`verify-deployment-ready.mjs`), and live production Vercel promotion. |
 | **Planned** | Scheduled Pinata unpin job for expired/abandoned issuance intents, pluggable secondary OCR engines via `registerOcrEngine()`, batch cohort issuance, and Polygon Mainnet (`137`) / enterprise permissioned chain rollout. |
 
@@ -139,42 +142,28 @@ NOSIH resolves these trade-offs through **strict separation of duties across thr
 ## 05. Key Features
 
 <div align="center">
-  <img src="assets/readme/nosih-features.png" alt="NOSIH Six Verified Implemented Core Capabilities" width="100%" />
+  <img src="assets/readme/nosih-features.png" alt="Six Cryptographic Pillars of NOSIH — Monochrome Icon Bento Grid" width="100%" />
 </div>
 
 ### 1. MetaMask-Only Issuance Handshake (`prepare → sign → confirm`)
-- **How it works**: `POST /api/certificates/issue/prepare` validates JWT auth, institution approval, active bound wallet, PDF magic bytes/size/page count, and duplicate guards, then computes hashes, encrypts &amp; pins the PDF, and writes a 30-minute `issuance_intents` row. The browser signs `issueCertificate` in MetaMask, and `POST /api/certificates/issue/confirm` independently verifies the on-chain receipt (`status === 1`, `to === CONTRACT_ADDRESS`, `chainId === 80002`) and every `CertificateIssued` event field against the intent before committing the authoritative certificate row.
-- **Why it matters**: Eliminates server-side issuance key theft and makes confirmation idempotent and retry-safe (returning HTTP `202` while a transaction is pending).
 
 <div align="center">
-  <img src="assets/readme/nosih-metamask-handshake.gif" alt="NOSIH Animated MetaMask Issuance Handshake — prepare, sign, confirm" width="100%" />
+  <img src="assets/readme/nosih-metamask-handshake.gif" alt="Animated MetaMask Issuance Handshake — prepare, sign, confirm" width="100%" />
 </div>
 
-### 2. Chain-First Public Verification (10 Explicit Verdicts)
-- **How it works**: `GET /api/verify/:certificateId` (public, rate-limited at 60 req/min/IP) queries `CertificateRegistry` on Polygon Amoy first, cross-checks Supabase metadata, and computes one of 10 explicit verdicts — including `blockchain-unavailable` (HTTP `503`, Indeterminate) whenever the RPC is unreachable.
-- **Why it matters**: A database row alone can never certify a credential, and verifiers never need to create an account.
+- `POST /api/certificates/issue/prepare` validates JWT auth, institution approval, active bound wallet, PDF magic bytes/size/page cap, and duplicate guards, then hashes, encrypts (`AES-256-GCM`), pins to Pinata IPFS, and stores a 30-minute `issuance_intents` row.
+- The issuer signs `issueCertificate(...)` directly in MetaMask (`ethers` v6 `BrowserProvider`). `POST /api/certificates/issue/confirm` independently verifies the on-chain receipt (`status === 1`, `to === CONTRACT_ADDRESS`, `chainId === 80002`) and every `CertificateIssued` event field before committing the authoritative record (idempotent &amp; retry-safe).
 
-### 3. Dual-Mode Cryptographic Tamper Detection
-- **How it works**: `POST /api/verify/:certificateId/tamper-check` supports **Mode A** (no file upload: fetches encrypted ciphertext from cache/IPFS, decrypts in memory, re-hashes against the chain without exposing PDF contents) and **Mode B** (PDF upload: validates magic bytes and hashes the exact uploaded bytes against the on-chain `documentHash`).
-- **Why it matters**: Detects even a 1-byte modification deterministically with zero AI in the integrity path.
-
-### 4. Privacy-First Text-Only AI Extraction
-- **How it works**: `pdfParser.js` extracts the JavaScript text layer (`PDF_TEXT_MIN_CHARS = 200`, `MAX_PDF_PAGES = 10`). If insufficient, pages render via `pdfjs-dist` + `pdf-to-png-converter` + `sharp` and run local `Tesseract.js v7` OCR behind a concurrency semaphore. `gemini.js` accepts strings only — image and PDF parts cannot be transmitted even by accident.
-- **Why it matters**: Cuts manual registrar typing across 17 base fields and 10 credential templates while keeping raw document pixels strictly inside the server boundary.
+### 2. Privacy-First Text-Only AI Extraction
 
 <div align="center">
-  <img src="assets/readme/nosih-ai-ocr-anim.gif" alt="NOSIH Animated Text-Only AI Extraction Pipeline — Local Tesseract OCR to Gemini" width="100%" />
+  <img src="assets/readme/nosih-ai-ocr-anim.gif" alt="Animated Text-Only AI Extraction Pipeline — Local Tesseract OCR to Gemini" width="100%" />
 </div>
 
-### 5. Three-Family Cryptography &amp; Zero-PII Ledger
-- **How it works**: Low-entropy PII (`holderIdentityHash`, `institutionIdHash`, `revocationReasonHash`) uses `HMAC-SHA256` with server-side `HASH_PEPPER`; random IDs (`CERT-XXXXXXXX`, `INST-XXXXXXXX`) map to `bytes32` via `keccak256`; exact PDF bytes and canonical JSON use `SHA-256`; PDFs use `AES-256-GCM` with `DOCUMENT_ENC_KEY`.
-- **Why it matters**: Prevents dictionary brute-forcing of holder identities from public blockchain state and protects stored PDFs even on public IPFS gateways.
+- `pdfParser.js` extracts embedded text first (`PDF_TEXT_MIN_CHARS = 200`, `MAX_PDF_PAGES = 10`). Scanned pages render via `pdfjs-dist` + `pdf-to-png-converter` + `sharp` and run local `Tesseract.js v7` OCR behind a concurrency semaphore.
+- `gemini.js` accepts **strings only** — images and base64 PDFs cannot leave the server even by accident. A human must review and approve every extracted field before hashing or signing.
 
-### 6. Auditable Revocation &amp; Non-Destructive Reissuance
-- **How it works**: `platform_admin` or the owning `institution_admin` revokes via `RevokeModal` with a mandatory reason (`REVOKER_ROLE` writes `revocationReasonHash` on-chain; plaintext reason stays in `certificate_events`). Reissuance (`POST /api/certificates/:certificateId/reissue`) prefills a new issuance intent linking `supersedesCertificateIdHash` to the prior record without mutating history.
-- **Why it matters**: Preserves a complete, immutable audit trail when correcting errors or revoking compromised credentials.
-
-### Role-Based Access Control Matrix
+### 3. Chain-First Verification, Dual-Mode Tamper Check &amp; Role Custody
 
 | Role | Scope &amp; Verified Capabilities |
 | :--- | :--- |
@@ -182,17 +171,18 @@ NOSIH resolves these trade-offs through **strict separation of duties across thr
 | `institution_admin` | Manage own institution profile, wallets, and staff; issue, revoke, and reissue own institution's certificates |
 | `issuer` | Issue and reissue certificates for their own approved institution using their bound MetaMask wallet |
 | `auditor` | Read-only access to their own institution's certificates and audit history |
-| `public` | Verify any certificate by `CERT-XXXXXXXX` ID or QR code and run Mode A / Mode B tamper checks — no login |
+| `public` | Verify any certificate by `CERT-XXXXXXXX` ID or QR code and run Mode A / Mode B tamper checks — zero login |
 
 <p align="center"><img src="assets/readme/nosih-divider.svg" alt="" width="100%" /></p>
 
 ## 06. System Architecture
 
 <div align="center">
-  <img src="assets/readme/nosih-architecture.png" alt="NOSIH System Architecture Diagram — Client, Express API, AI/OCR, and Three-Store Persistence" width="100%" />
+  <img src="assets/readme/nosih-architecture.png" alt="NOSIH Three-Layer Cryptographic Topology — Monochrome Illustrated Diagram" width="100%" />
 </div>
 
-### Component Interaction Flow (Mermaid)
+<details>
+<summary><strong>Interactive Mermaid Flow Diagram</strong> — Expand to inspect live component routing</summary>
 
 ```mermaid
 flowchart TB
@@ -235,24 +225,15 @@ flowchart TB
     VER -->|"REVOKER_ROLE revokeCertificate()"| CHAIN
 ```
 
+</details>
+
 <p align="center"><img src="assets/readme/nosih-divider.svg" alt="" width="100%" /></p>
 
 ## 07. How It Works
 
 <div align="center">
-  <img src="assets/readme/nosih-workflow.gif" alt="NOSIH Animated End-to-End Cryptographic Pipeline Walkthrough" width="100%" />
+  <img src="assets/readme/nosih-workflow.gif" alt="NOSIH Animated 8-Stage End-to-End Cryptographic Pipeline" width="100%" />
 </div>
-
-### Stage-by-Stage Issuance &amp; Verification Pipeline
-
-1. **PDF Upload &amp; Validation**: The issuer uploads a PDF (`MAX_UPLOAD_MB = 4` default on Vercel, `MAX_PDF_PAGES = 10`). Magic bytes (`%PDF-`) and size bounds are verified server-side.
-2. **Local Text-Layer or OCR Extraction**: `pdf-parse` extracts embedded text first (`PDF_TEXT_MIN_CHARS = 200`). If the PDF is scanned, `pdfjs-dist` + `pdf-to-png-converter` + `sharp` render pages and `Tesseract.js v7` performs local OCR behind a concurrency semaphore.
-3. **Text-Only AI Structuring**: Cleaned plain text is sent to `gemini-3.6-flash` with a strict JSON `responseSchema` derived from `certificateTemplates.js` to extract 17 base fields plus category-specific extras, confidence scores, and stated-vs-inferred flags.
-4. **Mandatory Human Review**: The issuer inspects the extracted fields side-by-side with the PDF preview, corrects any value, and explicitly approves the payload.
-5. **Cryptographic Preparation &amp; Encrypted Pinning (`POST /api/certificates/issue/prepare`)**: The backend checks institution approval, bound wallet status, and duplicate guards; generates `CERT-XXXXXXXX`, `SHA-256` document/metadata hashes, and `HMAC-SHA256` identity hashes; encrypts the PDF with `AES-256-GCM`; pins ciphertext to Pinata IPFS (and mirrors to Supabase private storage); and creates a 30-minute `issuance_intents` record.
-6. **MetaMask On-Chain Signing**: The frontend switches/verifies Polygon Amoy (`80002`), confirms the connected MetaMask account matches the intent's `issuerWallet`, and signs `issueCertificate(...)` directly from the browser.
-7. **Independent Receipt Verification &amp; QR Issuance (`POST /api/certificates/issue/confirm`)**: The backend queries the transaction receipt directly on-chain, validates status, target contract, chain ID, and every `CertificateIssued` event field against the stored intent, inserts the authoritative `certificates` row, and renders a labeled QR PNG encoding `/verify?certificateId=CERT-XXXXXXXX`.
-8. **Zero-Account Chain-First Verification**: Anyone scans the QR code or visits `/verify` or `/tamper` to validate authenticity, revocation, expiry, supersede lineage, or exact PDF byte integrity directly against Polygon Amoy.
 
 <details>
 <summary><strong>Deep Dive: All 10 Chain-Authoritative Verification Verdicts</strong></summary>
@@ -260,7 +241,7 @@ flowchart TB
 | Verdict Key | Display Label | HTTP Status | Meaning |
 | :--- | :--- | :---: | :--- |
 | `authentic-active` | Authentic and Active | `200` | On-chain record exists, matches DB &amp; hashes, issuer authorized, not revoked/expired/superseded |
-| `revoked` | Certificate Revoked | `200` | On-chain `revoked === true` (overrides hash match) |
+| `revoked` | Certificate Revoked | `200` | On-chain `revoked === true` (always overrides hash match) |
 | `expired` | Certificate Expired | `200` | On-chain `expiresAt !== 0 && now > expiresAt` (lazily mirrored to DB) |
 | `superseded` | Certificate Superseded (Reissued) | `200` | Replaced by a newer certificate; response includes the replacement `CERT-XXXXXXXX` ID |
 | `document-mismatch` | Document Hash Mismatch | `200` | Document hash diverges from the immutable on-chain `documentHash` |
@@ -276,7 +257,7 @@ flowchart TB
 <summary><strong>Deep Dive: 17 Base Extracted Fields &amp; 10 Supported Certificate Categories</strong></summary>
 
 - **17 Base Fields (`backend/services/certificateTemplates.js`)**: `certificateType`, `certificateNumber`, `holderName`, `holderIdentifier`, `institutionName`, `institutionAddress`, `courseName`, `qualification`, `qualificationLevel`, `specialization`, `grade`, `percentage`, `issueDate`, `expiryDate`, `academicYear`, `signatoryName`, `signatoryDesignation`.
-- **10 Certificate Categories with Dynamic Extra Templates** (stored in `certificates.extra_data` JSONB): `undergraduate_degree`, `postgraduate_degree`, `diploma`, `transcript`, `professional_training`, `technical_certification`, `course_completion`, `internship`, `achievement`, `other`.
+- **10 Certificate Categories with Dynamic Extra Templates** (`certificates.extra_data` JSONB): `undergraduate_degree`, `postgraduate_degree`, `diploma`, `transcript`, `professional_training`, `technical_certification`, `course_completion`, `internship`, `achievement`, `other`.
 
 </details>
 
@@ -285,17 +266,8 @@ flowchart TB
 ## 08. Technology Stack
 
 <div align="center">
-  <img src="assets/readme/nosih-tech-stack.png" alt="NOSIH Verified Technology Stack Across All Six Layers" width="100%" />
+  <img src="assets/readme/nosih-tech-stack.png" alt="NOSIH Complete Verified Technology Stack — Monochrome Matrix" width="100%" />
 </div>
-
-| Layer | Technologies &amp; Verified Versions |
-| :--- | :--- |
-| **Smart Contracts &amp; Web3** | Solidity `0.8.20` (optimizer 200 runs), `@openzeppelin/contracts` `^5.0.0` (`AccessControl`, `ReentrancyGuard`), `hardhat` `^2.19.0`, `@nomicfoundation/hardhat-toolbox` `^4.0.0`, `ethers` `^6.8.1`, Polygon Amoy (`80002`) |
-| **Backend API &amp; Security** | Node.js `22.x` (ESM), `express` `^4.18.2`, `express-rate-limit` `^8.7.4`, `jsonwebtoken` `^9.0.2`, `bcryptjs` `^3.0.3`, `joi` `^18.0.2`, `cors` `^2.8.5`, `multer` `^1.4.5-lts.1`, `qrcode` `^1.5.3`, `sharp` `^0.35.2` |
-| **AI &amp; Local OCR Pipeline** | `@google/generative-ai` `^0.24.1` (`gemini-3.6-flash` default, text-only), `pdf-parse` `^2.4.5`, `pdfjs-dist` `5.4.296`, `pdf-to-png-converter` `^3.11.0`, `@napi-rs/canvas` `^1.1.0`, `tesseract.js` `^7.0.0` |
-| **Database &amp; Storage** | `@supabase/supabase-js` `^2.118.0` (PostgreSQL + RLS + private Storage bucket `certificates`), Pinata IPFS + 5-gateway `Promise.any` race |
-| **Frontend SPA** | `react` `18.2.0`, `react-scripts` `5.0.1`, `react-router-dom` `^6.20.1`, `@tanstack/react-query` `^5.8.4`, `ethers` `^6.8.1`, `lucide-react` `^1.60.0`, `qrcode.react` `^3.1.0`, `react-dropzone` `^14.2.3`, `axios` `^1.6.2` |
-| **Deployment &amp; Tooling** | Vercel (`vercel.json` SPA + `api/index.js` serverless rewrite), custom Node `.mjs`/`.js` preflight &amp; verification scripts |
 
 <p align="center"><img src="assets/readme/nosih-divider.svg" alt="" width="100%" /></p>
 
@@ -307,7 +279,7 @@ NOSIH-CERT-main/
 │   ├── index.js                         # Vercel serverless entry wrapping backend/server.js
 │   └── package.json
 ├── assets/
-│   └── readme/                          # Custom README infographics, SVGs, logo & animated GIFs
+│   └── readme/                          # Pure-monochrome animated GIFs, SVGs, logo & infographics
 ├── backend/
 │   ├── server.js                        # Express 4 ESM app, /api/health, boot env audit → 503 gate
 │   ├── config.js · env.js · envCheck.js # Root .env loader & startup configuration validator
@@ -350,60 +322,33 @@ NOSIH-CERT-main/
 
 ## 10. Installation and Setup
 
-### Prerequisites
-
-- **Node.js `22.x`** and `npm`
-- A **Supabase** project (PostgreSQL + Storage)
-- A **Pinata** account (JWT or API keys for IPFS pinning)
-- A **Google Gemini API key** (for text-only structured extraction)
-- **MetaMask** browser extension configured for **Polygon Amoy (`chainId: 80002`)** with test POL for deployer, issuer, and revoker wallets
-
-### Local Setup
+Prerequisites: **Node.js `22.x`**, Supabase project, Pinata account, Google Gemini API key, and MetaMask with **Polygon Amoy (`80002`)** POL.
 
 ```bash
-# 1. Install dependencies across root (Hardhat), backend, and frontend
+# 1. Install dependencies (root Hardhat, backend API, frontend SPA)
 npm install
 npm install --prefix backend
 npm install --prefix frontend
 
-# 2. Configure root environment variables (see annotated .env.example)
+# 2. Configure environment files
 cp .env.example .env
-
-# 3. Optional frontend environment (frontend/.env.local)
 cp frontend/env.example frontend/.env.local
+
+# 3. Apply database schema (fresh: schema.sql · existing NOSIH: migrations/001_nosih.sql)
+npm run schema:apply
+npm run seed:admin
+
+# 4. Deploy CertificateRegistry & authorize issuer wallet on Polygon Amoy (live write)
+npm run deploy:amoy -- --yes
+npm run issuer:add -- --yes
+
+# 5. Start local development servers
+npm --prefix backend run dev     # API on :5000
+npm --prefix frontend start      # React SPA on :3000 (proxies /api)
 ```
 
-### Database, Contract &amp; Services Bootstrap
-
-1. **Apply Database Schema**
-   - *Fresh Supabase project*: run `backend/supabase/schema.sql` in the Supabase SQL Editor (or `npm run schema:apply`).
-   - *Existing NOSIH project*: run `backend/supabase/migrations/001_nosih.sql` (additive &amp; idempotent — preserves prior tables; take a backup first).
-2. **Seed Platform Admin**
-   ```bash
-   npm run seed:admin
-   ```
-3. **Deploy `CertificateRegistry` to Polygon Amoy** *(live write — requires funded deployer)*
-   ```bash
-   npm run deploy:amoy -- --yes
-   ```
-   Grants `REVOKER_ROLE`, writes `deployments/amoy.json`, regenerates both ABI modules (`backend/services/certificateRegistryABI.js` and `frontend/src/utils/contractABI.js`), and updates `CONTRACT_ADDRESS`.
-4. **Approve Institution &amp; Authorize Issuer Wallet On-Chain**
-   - Sign in as `platform_admin`, register or approve the institution, and add its issuer wallet address.
-   - Authorize the wallet on-chain (also activates the `issuer_wallets` row):
-   ```bash
-   npm run issuer:add -- --yes
-   ```
-5. **Run Backend &amp; Frontend Locally**
-   ```bash
-   # Terminal 1 — Express API on port 5000
-   npm --prefix backend run dev
-
-   # Terminal 2 — React SPA on port 3000 (proxies /api → localhost:5000)
-   npm --prefix frontend start
-   ```
-
 <details>
-<summary><strong>Environment Variable Reference &amp; Vercel Deployment</strong></summary>
+<summary><strong>Environment Reference &amp; Vercel Deployment Commands</strong></summary>
 
 #### Required at Boot (`backend/envCheck.js`)
 | Variable | Purpose |
@@ -414,18 +359,13 @@ cp frontend/env.example frontend/.env.local
 | `DOCUMENT_ENC_KEY` | 64-hex-char (32-byte) AES-256-GCM encryption key — **back up securely** |
 | `HASH_PEPPER` | 64-hex-char (32-byte) HMAC-SHA256 pepper — **back up securely** |
 
-#### Chain &amp; Feature-Gated Variables
-- `CONTRACT_ADDRESS` — required for all chain reads and receipt verification
-- `GEMINI_API_KEY` (and optional `GEMINI_MODEL`, default `gemini-3.6-flash`) — AI extraction
-- `PINATA_JWT` — IPFS ciphertext pinning during issuance
-- `REVOKE_PRIVATE_KEY` — server-side `REVOKER_ROLE` signer (revocation only; there is no `ISSUER_PRIVATE_KEY`)
+Feature-gated: `CONTRACT_ADDRESS` (chain reads), `GEMINI_API_KEY` (extraction), `PINATA_JWT` (IPFS pinning), `REVOKE_PRIVATE_KEY` (`REVOKER_ROLE` server-only revocation — no `ISSUER_PRIVATE_KEY` exists).
 
 #### Deploying to Vercel
-`REACT_APP_*` variables are inlined at **build time** and must be pushed before deploying:
 ```bash
 vercel login
-npm run vercel:env        # pushes backend + REACT_APP_* vars (supports --dry-run)
-npm run check:deploy      # full preflight: env, live credentials, native-module trace
+npm run vercel:env        # pushes backend + build-time REACT_APP_* vars (--dry-run supported)
+npm run check:deploy      # preflight: env, live credentials, native-module trace
 npm run vercel:deploy
 ```
 
@@ -435,21 +375,16 @@ npm run vercel:deploy
 
 ## 11. Usage Guide
 
-### Public Chain-First Verification (No Account Required)
-
 ```bash
-# Verify a certificate by its human-readable CERT ID
+# Public chain-first verification (zero account)
 curl -s https://<your-domain>/api/verify/CERT-8F4A2C91 | jq
 
-# Mode A tamper check (re-hashes stored encrypted IPFS/cache PDF without exposing file bytes)
+# Mode A tamper check (re-hashes stored encrypted IPFS/cache PDF without exposing contents)
 curl -s -X POST https://<your-domain>/api/verify/CERT-8F4A2C91/tamper-check | jq
 
-# Mode B tamper check (hashes an uploaded PDF's exact bytes against the on-chain documentHash)
+# Mode B tamper check (hashes uploaded PDF bytes directly against on-chain documentHash)
 curl -s -X POST https://<your-domain>/api/verify/CERT-8F4A2C91/tamper-check \
   -F "file=@./candidate_degree.pdf" | jq
-
-# Check backend health & configuration audit (always answers even if misconfigured)
-curl -s http://localhost:5000/api/health | jq
 ```
 
 <details>
@@ -458,17 +393,12 @@ curl -s http://localhost:5000/api/health | jq
 | Group | Method &amp; Endpoint | Access | Description |
 | :--- | :--- | :--- | :--- |
 | **Health** | `GET /api/health` | Public | Boot env audit &amp; Supabase readiness (`200` ok / `503` degraded) |
-| **Auth** | `POST /api/auth/login` · `POST /api/auth/register` | Public / Admin | Session login &amp; admin user provisioning |
-| **Auth** | `GET /api/auth/me` · `PATCH /api/auth/me/wallet` | Authenticated | Current profile &amp; wallet association |
-| **Institutions** | `POST /api/institutions/apply` | Public | Public institution onboarding application |
-| **Institutions** | `GET /api/institutions` · `GET /mine` · `GET /:id` · `PATCH /:id` | Role-Scoped | Institution directory &amp; profile updates |
-| **Institutions** | `PATCH /api/institutions/:id/status` | `platform_admin` | Approve, reject, or suspend an institution |
-| **Institutions** | `GET/POST/PATCH /api/institutions/:id/wallets` &amp; `/users` | Admin-Scoped | Manage bound issuer wallets and institution staff |
-| **Certificates** | `POST /api/certificates/extract` · `GET /meta/templates` | Issuer / Admin | Text-only PDF/OCR → Gemini extraction &amp; template catalog |
-| **Certificates** | `POST /api/certificates/issue/prepare` · `POST /issue/confirm` | Issuer / Admin | Two-phase MetaMask issuance handshake + `GET /issue/intents/:id` |
-| **Certificates** | `GET /api/certificates` · `GET /:id` · `GET /:id/document` · `GET /:id/qr` | Role-Scoped | List, inspect, decrypt PDF, or fetch labeled QR PNG |
-| **Certificates** | `POST /api/certificates/:id/revoke` · `POST /:id/reissue` | Admin / Issuer | Permanent on-chain revocation &amp; supersede reissuance |
-| **Public Verify** | `GET /api/verify/:id` · `POST /:id/tamper-check` · `GET /:id/qr` | Public (60/min) | Chain-authoritative verification, Mode A/B tamper check &amp; QR PNG |
+| **Auth** | `POST /api/auth/login` · `POST /api/auth/register` · `GET /me` · `PATCH /me/wallet` | Public / Auth | Login, admin user provisioning &amp; wallet binding |
+| **Institutions** | `POST /api/institutions/apply` · `GET /` · `GET /mine` · `PATCH /:id/status` | Public / Admin | Onboarding, approval workflow, wallets &amp; staff |
+| **Certificates** | `POST /api/certificates/extract` · `GET /meta/templates` | Issuer / Admin | Text-only PDF/OCR → Gemini extraction &amp; templates |
+| **Certificates** | `POST /issue/prepare` · `POST /issue/confirm` · `GET /issue/intents/:id` | Issuer / Admin | Non-custodial MetaMask issuance handshake |
+| **Certificates** | `GET /` · `GET /:id` · `GET /:id/document` · `GET /:id/qr` · `POST /:id/revoke` · `POST /:id/reissue` | Role-Scoped | Inspection, decryption, QR PNG, revocation &amp; reissuance |
+| **Public Verify** | `GET /api/verify/:id` · `POST /:id/tamper-check` · `GET /:id/qr` | Public (60/min) | Chain-authoritative verification, Mode A/B tamper check &amp; QR |
 
 </details>
 
@@ -476,13 +406,11 @@ curl -s http://localhost:5000/api/health | jq
 
 ## 12. Visual Demonstration
 
-### Animated Cryptographic Tamper Detection Walkthrough
-
 <div align="center">
-  <img src="assets/readme/nosih-tamper-demo.gif" alt="NOSIH Animated Tamper Detection Demo — Original Match, 1-Byte Edit Mismatch, Revoked Override, and 503 Fail-Closed" width="100%" />
+  <img src="assets/readme/nosih-tamper-demo.gif" alt="NOSIH Animated Fingerprint Tamper Detection Console — Match, 1-Byte Edit, Revoked, and 503 Fail-Closed" width="100%" />
 </div>
 
-### Live Testnet Deployment Coordinates (`deployments/amoy.json`)
+### Live Polygon Amoy Testnet Deployment (`deployments/amoy.json`)
 
 | Artifact | Verified Value |
 | :--- | :--- |
@@ -495,28 +423,15 @@ curl -s http://localhost:5000/api/health | jq
 
 ## 13. Performance, Testing and Verification Gates
 
-No GitHub Actions CI workflows are configured yet; instead, NOSIH ships an extensive suite of **in-memory Hardhat tests** and **local preflight verification gates**.
+> **Standing Rule — Zero Live Ledger Writes in Tests:** All contract and integration tests run exclusively on Hardhat's in-memory EVM (`test/CertificateRegistry.test.js` 14 tests · `test/IssuanceHandshake.test.js` 14 tests · `test/Verification.test.js` 16+ tests). No GitHub Actions CI is configured yet; these local gates are the proof.
 
-> **Standing Rule — Zero Live Ledger Writes in Tests:** All smart-contract and integration tests run exclusively on Hardhat's in-memory EVM. Live Polygon Amoy writes (`deploy:amoy`, `issuer:add`, `issuer:remove`) execute only with explicit `--yes` approval and funded wallets.
-
-### Automated Test Suites (`npm test`)
-
-| Suite | File | Verified Coverage |
-| :--- | :--- | :--- |
-| **Smart Contract** | `test/CertificateRegistry.test.js` | 14 tests covering `DEFAULT_ADMIN_ROLE`, institution-bound `ISSUER_ROLE`, duplicate rejection, cross-institution blocking, `REVOKER_ROLE` once-only revocation, supersede reissuance, expiry guards, and event emissions |
-| **Issuance Handshake** | `test/IssuanceHandshake.test.js` | 14 tests verifying receipt status/contract/chain checks, event-vs-intent tamper rejection, pending tx handling, malformed hash rejection, `ChainConfigError`/`ChainUnavailableError`, and absence of server-side issuance keys |
-| **Chain-First Verifier** | `test/Verification.test.js` | 16+ tests exercising all 10 verdicts, `503` fail-closed outage behavior, Mode A ciphertext integrity, Mode B 1-byte modification detection, revocation-over-hash-match, and malformed ID rejection |
-
-### Local Verification Gates
-
-| Command | Mode | What It Verifies |
+| Command | Mode | What It Proves |
 | :--- | :---: | :--- |
-| `npm test` | Offline | Full Hardhat in-memory contract, handshake &amp; verification suites |
+| `npm test` | Offline | Full in-memory Hardhat contract, issuance handshake &amp; 10-verdict verifier suites |
 | `npm run check:p2` … `check:p8` | Offline | Schema/authz, extraction, storage/QR, handshake, verification/revocation, frontend contract alignment |
-| `npm run check:ui-render` | Offline | Production React bundle renders readable failures in jsdom (no blank white screen) |
+| `npm run check:ui-render` | Offline | Production React bundle renders readable failures in jsdom (never a blank white screen) |
 | `npm run check:boot` | Offline | Misconfigured boot stays alive and reports every missing variable via `/api/health` |
-| `npm run check:env` | Live Read-Only | Env audit, key/address derivation, frontend config, RPC connectivity &amp; balances |
-| `npm run check:gas` | Live Read-Only | Wallet POL credit report (nothing broadcast) |
+| `npm run check:env` / `check:gas` | Live Read-Only | Env audit, key/address derivation, RPC connectivity &amp; wallet POL balances (nothing broadcast) |
 | `npm run check:services` | Live Read-Only | Real read-only credential checks against Supabase, Gemini, and Pinata |
 | `npm run check:jwt` / `check:ipfs` | Live | Pinata JWT scope audit and 1-byte pin + fetch roundtrip |
 | `npm run check:extract` | Live | Real Gemini text-only extraction on digital + scanned certificate fixtures |
@@ -528,100 +443,82 @@ No GitHub Actions CI workflows are configured yet; instead, NOSIH ships an exten
 ## 14. Before vs. After
 
 <div align="center">
-  <img src="assets/readme/nosih-before-after-anim.gif" alt="NOSIH Animated Live Tamper Simulation — Legacy Portal vs NOSIH Chain-First Architecture" width="100%" />
+  <img src="assets/readme/nosih-before-after-anim.gif" alt="Animated Live Attack Simulation — Legacy Centralized Portal vs NOSIH Chain-First Architecture" width="100%" />
 </div>
 
-<br />
-
-<div align="center">
-  <img src="assets/readme/nosih-before-after.png" alt="Before vs After Comparison — Traditional Paper and Centralized Portals vs NOSIH Chain-First Architecture" width="100%" />
-</div>
+| Dimension | Legacy Paper / Centralized Portal | NOSIH Chain-First Architecture |
+| :--- | :--- | :--- |
+| **Trust Authority** | Single mutable institution database | Polygon Amoy `CertificateRegistry.sol` is authoritative |
+| **Signing Custody** | Server-side admin key or paper stamp | MetaMask-only issuer signing · zero server issuance keys |
+| **PII Privacy** | Plaintext names &amp; IDs exposed in portal/ledger | Zero PII on-chain · `HMAC-SHA256` + `AES-256-GCM` |
+| **Tamper Detection** | Visual inspection misses subtle PDF edits | Mode A &amp; B `SHA-256` catches any 1-byte modification |
+| **AI Exposure** | Raw certificate images sent to vision APIs | Local `pdf-parse` / `Tesseract.js` · text-only to Gemini |
+| **Outage Behavior** | Silent DB fallback or corrupted state | Fails closed with `HTTP 503` (`blockchain-unavailable`) |
 
 <p align="center"><img src="assets/readme/nosih-divider.svg" alt="" width="100%" /></p>
 
 ## 15. Roadmap
 
 <div align="center">
-  <img src="assets/readme/nosih-roadmap.png" alt="NOSIH Development Roadmap — Completed, In Progress, and Planned Milestones" width="100%" />
+  <img src="assets/readme/nosih-roadmap.png" alt="NOSIH Development Roadmap — Completed, In Progress, and Planned" width="100%" />
 </div>
-
-<details>
-<summary><strong>Development Milestones (Migration Phases P0–P9)</strong></summary>
-
-- **P0–P1 · Audit &amp; Architecture Plan**: Full codebase audit and design blueprint (`plan/CERTICHAIN_MIGRATION_PLAN.md`).
-- **P2 · Schema &amp; Authorization**: 6-table RLS schema, additive migration `001_nosih.sql`, and multi-role institution/wallet middleware.
-- **P3 · Smart Contract**: `CertificateRegistry.sol` (Solidity `0.8.20`, OpenZeppelin v5) with 14-test Hardhat suite.
-- **P4–P5 · Text-Only AI Extraction &amp; Crypto Vault**: Split `pdfParser` + local `Tesseract.js` + text-only `gemini.js`, three-family hashing, AES-256-GCM encryption, Pinata IPFS + Supabase mirror, and labeled QR PNGs.
-- **P6–P7 · MetaMask Handshake &amp; 10-Verdict Verifier**: `prepare → sign → confirm` flow, chain-first verifier, Mode A/B tamper checks, `REVOKER_ROLE`, and supersede reissuance.
-- **P8–P9 · Frontend SPA &amp; Amoy Deployment**: React 18 portal (`IssuePage`, `VerifyPage`, `TamperPage`, `InstitutionsPage`, `RevokeModal`) and live Polygon Amoy deployment (`2026-11-19`).
-
-</details>
 
 <p align="center"><img src="assets/readme/nosih-divider.svg" alt="" width="100%" /></p>
 
 ## 16. Research and References
 
-### Repository Design &amp; Architecture Documents
-- [`plan/CERTICHAIN_MIGRATION_PLAN.md`](plan/CERTICHAIN_MIGRATION_PLAN.md) — Complete engineering specification covering D1–D10 design decisions and P0–P9 verification gates.
-- [`plan/TECHNICAL_ARCHITECTURE.md`](plan/TECHNICAL_ARCHITECTURE.md) — Three-tier cryptographic storage and failure-mode architecture reference.
-- [`plan/SOLUTION_DESIGN.md`](plan/SOLUTION_DESIGN.md) — Three-family cryptographic design and continuous chain-of-custody concepts.
-- [`plan/PROPOSED_TECHNOLOGIES.md`](plan/PROPOSED_TECHNOLOGIES.md) — Technology trade-off matrix and dependency rationale.
-- [`NOSIH_presentation.pdf`](NOSIH_presentation.pdf) — *Historical note*: documents the earlier NOSIH land-deed prototype that established the three-tier cryptographic, IPFS, and RLS architecture later evolved into the current NOSIH-CERT academic/professional credential platform.
-
-### External Standards &amp; Documentation
-- [OpenZeppelin Contracts v5 — AccessControl &amp; ReentrancyGuard](https://docs.openzeppelin.com/contracts/5.x/access-control)
-- [Polygon Amoy Testnet Documentation](https://docs.polygon.technology/)
-- [Pinata IPFS Documentation](https://docs.pinata.cloud/)
-- [Supabase Row-Level Security (RLS)](https://supabase.com/docs/guides/database/postgres/row-level-security)
-- [NIST FIPS 180-4 (SHA-256) &amp; SP 800-38D (AES-GCM)](https://csrc.nist.gov/publications)
+- [`plan/CERTICHAIN_MIGRATION_PLAN.md`](plan/CERTICHAIN_MIGRATION_PLAN.md) — Engineering decisions D1–D10 and verification phases P0–P9.
+- [`plan/TECHNICAL_ARCHITECTURE.md`](plan/TECHNICAL_ARCHITECTURE.md) — Three-tier storage &amp; failure-mode architecture reference.
+- [`plan/SOLUTION_DESIGN.md`](plan/SOLUTION_DESIGN.md) &amp; [`plan/PROPOSED_TECHNOLOGIES.md`](plan/PROPOSED_TECHNOLOGIES.md) — Cryptographic design and dependency rationale.
+- [`NOSIH_presentation.pdf`](NOSIH_presentation.pdf) — *Historical context*: earlier land-deed prototype that established the three-tier cryptographic, IPFS, and RLS architecture later evolved into NOSIH-CERT.
+- Standards: [OpenZeppelin Contracts v5](https://docs.openzeppelin.com/contracts/5.x/access-control) · [Polygon Amoy Docs](https://docs.polygon.technology/) · [Pinata IPFS Docs](https://docs.pinata.cloud/) · [Supabase RLS](https://supabase.com/docs/guides/database/postgres/row-level-security) · [NIST FIPS 180-4 / SP 800-38D](https://csrc.nist.gov/publications).
 
 <p align="center"><img src="assets/readme/nosih-divider.svg" alt="" width="100%" /></p>
 
 ## 17. Limitations
 
-- **Testnet Deployment**: Currently deployed on Polygon Amoy (`chainId: 80002`); production mainnet (`137`) or permissioned enterprise chain deployment requires separate RPC/funding configuration.
-- **Orphaned Ciphertext on Abandoned Intents**: Because `/issue/prepare` encrypts and pins ciphertext before MetaMask signing, rejected or expired 30-minute intents leave unreferenced pins on Pinata until an automated unpin cleanup job is added.
-- **Read-Time Expiry Semantics**: Smart contracts have no native cron; certificate expiry is computed on read (`expiresAt !== 0 && block.timestamp > expiresAt`) and lazily mirrored to Postgres.
-- **Serverless Upload &amp; OCR Constraints**: Vercel enforces a 4.5 MB request body ceiling (`MAX_UPLOAD_MB` defaults to `4`, `MAX_PDF_PAGES` defaults to `10`), and local Tesseract.js OCR runs behind a single-worker concurrency semaphore to prevent per-page timeouts under load.
-- **No Automated CI Yet**: Verification relies on local `npm test` and `check:p2`–`check:p8` scripts rather than GitHub Actions workflows.
-- **Legacy Files Retained**: `NOSIH_presentation.pdf` and `verify-deployment-ready.mjs` remain in the repository from the prior land-deed phase (`scripts/vercel-preflight.mjs` is the active preflight script).
+- **Testnet Only**: Currently deployed on Polygon Amoy (`80002`); mainnet (`137`) or permissioned enterprise chain deployment requires separate RPC and funding setup.
+- **Orphaned Pins on Abandoned Intents**: Ciphertext pinned during `/issue/prepare` remains on Pinata if an issuer cancels MetaMask signing, until a scheduled unpin job is implemented.
+- **Read-Time Expiry**: Smart contracts have no native cron; expiry is evaluated at read time and lazily mirrored to Postgres.
+- **Serverless &amp; OCR Caps**: Vercel enforces a 4.5 MB body limit (`MAX_UPLOAD_MB = 4`, `MAX_PDF_PAGES = 10`), and local `Tesseract.js` runs behind a single-worker concurrency semaphore.
+- **No CI &amp; Legacy Artifacts**: No GitHub Actions workflows exist yet; `NOSIH_presentation.pdf` and stale `verify-deployment-ready.mjs` remain in the repo (`scripts/vercel-preflight.mjs` is active).
 
 <p align="center"><img src="assets/readme/nosih-divider.svg" alt="" width="100%" /></p>
 
 ## 18. FAQ
 
 <details>
-<summary><strong>Why is there no server-side ISSUER_PRIVATE_KEY?</strong></summary>
+<summary><strong>Why is there no ISSUER_PRIVATE_KEY on the server?</strong></summary>
 
-By design, issuance is signed exclusively by the issuer's MetaMask wallet (`BrowserProvider`). Even if the backend server or database were compromised, an attacker cannot mint valid on-chain certificates for any institution.
-
-</details>
-
-<details>
-<summary><strong>What happens if the Polygon Amoy RPC is down during verification?</strong></summary>
-
-NOSIH fails closed and returns `blockchain-unavailable` with HTTP `503` (Indeterminate). It never falls back to reporting a certificate as valid from Supabase Postgres alone.
+Because a server compromise should never be able to forge a degree. Every issuance is signed exclusively by the issuer's MetaMask wallet (`BrowserProvider`).
 
 </details>
 
 <details>
-<summary><strong>Does NOSIH send certificate PDFs or images to Google Gemini?</strong></summary>
+<summary><strong>What happens when the blockchain RPC is down?</strong></summary>
 
-No. `backend/services/gemini.js` accepts strings only. Digital PDFs are parsed locally via `pdf-parse`, and scanned PDFs are OCR'd locally via `Tesseract.js v7`. Only cleaned plain text is sent to Gemini for JSON field structuring, and a human must review every field before signing.
-
-</details>
-
-<details>
-<summary><strong>How does reissuance work if the blockchain is immutable?</strong></summary>
-
-`CertificateRegistry.sol` never overwrites an existing certificate. Reissuance creates a new certificate ID whose `supersedesCertificateIdHash` points to the original record. Verifying the old ID returns `superseded` along with the replacement `CERT-XXXXXXXX` ID.
+NOSIH fails closed and returns `HTTP 503` (`blockchain-unavailable`). It will never tell an employer a certificate is authentic using only Supabase Postgres.
 
 </details>
 
 <details>
-<summary><strong>What happens if DOCUMENT_ENC_KEY or HASH_PEPPER is lost?</strong></summary>
+<summary><strong>Does Gemini ever see the certificate PDF or image?</strong></summary>
 
-Losing `DOCUMENT_ENC_KEY` makes all previously encrypted IPFS/Supabase PDFs permanently undecryptable, and losing `HASH_PEPPER` breaks keyed identity and revocation-reason linkage. Back up both 64-hex-character keys securely outside the repository.
+Never. `backend/services/gemini.js` accepts plain text strings only. Digital PDFs parse via `pdf-parse`, scanned pages OCR locally via `Tesseract.js v7`, and pixels stay inside the server.
+
+</details>
+
+<details>
+<summary><strong>How do you fix a typo if the blockchain is immutable?</strong></summary>
+
+You reissue, never overwrite. The new certificate links `supersedesCertificateIdHash` to the old record; verifying the old ID returns `superseded` and points directly to the replacement `CERT-XXXXXXXX`.
+
+</details>
+
+<details>
+<summary><strong>What if DOCUMENT_ENC_KEY or HASH_PEPPER is lost?</strong></summary>
+
+Encrypted IPFS PDFs become permanently undecryptable and keyed identity hashes lose linkage. Back up both 64-hex-character secrets securely outside the repository.
 
 </details>
 
@@ -629,16 +526,13 @@ Losing `DOCUMENT_ENC_KEY` makes all previously encrypted IPFS/Supabase PDFs perm
 
 ## 19. Contributing
 
-Contributions that strengthen security, verification coverage, or documentation are welcome:
-
-1. Fork the repository and create a feature branch (`git checkout -b feat/your-change`).
-2. Install dependencies (`npm install`, `npm install --prefix backend`, `npm install --prefix frontend`).
-3. Run the offline verification suites before opening a pull request:
+1. Fork the repository and create a branch (`git checkout -b feat/your-change`).
+2. Run the offline verification gates before opening a PR:
    ```bash
    npm test
    npm run check:p2 && npm run check:p4 && npm run check:p5 && npm run check:p6 && npm run check:p7 && npm run check:p8
    ```
-4. Never commit `.env` secrets or trigger live Polygon Amoy writes from automated tests.
+3. Never commit `.env` secrets or run live Polygon Amoy writes from automated tests.
 
 <p align="center"><img src="assets/readme/nosih-divider.svg" alt="" width="100%" /></p>
 
@@ -647,13 +541,11 @@ Contributions that strengthen security, verification coverage, or documentation 
 - **Repository Root**: No `LICENSE` file is currently present in the repository root, and `package.json` omits a `"license"` field.
 - **Smart Contract**: `contracts/CertificateRegistry.sol` specifies `// SPDX-License-Identifier: MIT`.
 
-Until a root `LICENSE` file is added by the project maintainers, all rights outside the SPDX-tagged Solidity contract remain unspecified.
-
 <p align="center"><img src="assets/readme/nosih-divider.svg" alt="" width="100%" /></p>
 
 ## 21. Acknowledgements
 
-NOSIH builds on open-source cryptographic, Web3, OCR, and web foundations including [OpenZeppelin](https://www.openzeppelin.com/), [Hardhat](https://hardhat.org/), [ethers.js](https://docs.ethers.org/), [Polygon](https://polygon.technology/), [Supabase](https://supabase.com/), [Pinata / IPFS](https://www.pinata.cloud/), [Tesseract.js](https://tesseract.projectnaptha.com/), [PDF.js](https://mozilla.github.io/pdf.js/), [Google Gemini](https://ai.google.dev/), [React](https://react.dev/), [Express](https://expressjs.com/), and [Vercel](https://vercel.com/).
+Built on [OpenZeppelin](https://www.openzeppelin.com/), [Hardhat](https://hardhat.org/), [ethers.js](https://docs.ethers.org/), [Polygon](https://polygon.technology/), [Supabase](https://supabase.com/), [Pinata / IPFS](https://www.pinata.cloud/), [Tesseract.js](https://tesseract.projectnaptha.com/), [PDF.js](https://mozilla.github.io/pdf.js/), [Google Gemini](https://ai.google.dev/), [React](https://react.dev/), [Express](https://expressjs.com/), and [Vercel](https://vercel.com/).
 
 <br />
 
@@ -663,15 +555,15 @@ NOSIH builds on open-source cryptographic, Web3, OCR, and web foundations includ
 
 <br />
 
-<img src="assets/readme/nosih-logo.svg" alt="NOSIH Logo" width="44" height="44" />
+<img src="assets/readme/nosih-logo.svg" alt="NOSIH Logo" width="48" height="48" />
 
-**NOSIH** — *The chain is the authority. Zero PII on-chain. Zero-account public verification.*
+**NOSIH** — *Years of effort deserve proof no one can fake.*
 
 <p>
   <a href="#readme-top">Back to Top ↑</a> ·
+  <a href="#04-our-approach">Verification Ladder</a> ·
   <a href="#06-system-architecture">Architecture</a> ·
-  <a href="#10-installation-and-setup">Quick Start</a> ·
-  <a href="#13-performance-testing-and-verification-gates">Verification Gates</a> ·
+  <a href="#10-installation-and-setup">Install</a> ·
   <a href="#18-faq">FAQ</a>
 </p>
 
