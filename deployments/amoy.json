@@ -1,0 +1,10 @@
+{
+  "network": "amoy",
+  "chainId": 80002,
+  "contract": "CertificateRegistry",
+  "address": "0xA9334Eb5E1c2811dcAE32880702092a7A7555680",
+  "deployer": "0xa57412031A244998FC00D70d77D7C55E64D3B1A7",
+  "revoker": "0x95fD0642A444eC3707119740a2BE94BC399Eb5Af",
+  "deployTxHash": "0x86b5cfb857e10e7347538e5eb24d08149b42b9ea37ba80b5b50b95997d8b3dc8",
+  "deployedAt": "2026-11-19T05:16:22.365Z"
+}

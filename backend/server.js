@@ -1,0 +1,125 @@
+/**
+ * NOSIH backend entry point.
+ *
+ * Local:      node server.js  (listens on PORT)
+ * Vercel:     imported by the zero-config Express runtime, which uses the
+ *             default export as the request handler for every path.
+ */
+import "./env.js"; // loads the repository-root .env — must come first
+import express from "express";
+import cors from "cors";
+
+import { supabaseBootError } from "./supabase.js"; // connects + validates at boot
+import { auditEnv, describeProblems } from "./envCheck.js";
+import { errorHandler } from "./middleware/errorHandler.js";
+
+import authRoutes        from "./routes/auth.js";
+import institutionRoutes from "./routes/institutions.js";
+import certificateRoutes from "./routes/certificates.js";
+import verifyRoutes      from "./routes/verify.js";
+
+const envAudit = auditEnv();
+
+if (!envAudit.ok) {
+  console.error("FATAL: the backend environment is incomplete:");
+  console.error(describeProblems(envAudit.problems));
+  console.error("The API will answer with 503 and these details until they are fixed.");
+}
+
+const app = express();
+
+// Behind Vercel's proxy: trust the first hop so rate limiting keys on the
+// real client IP (X-Forwarded-For), not the platform's internal address.
+app.set("trust proxy", 1);
+
+// ── CORS ─────────────────────────────────────────────────
+// FRONTEND_URL accepts a comma-separated list (production + preview URLs).
+const allowedOrigins = (process.env.FRONTEND_URL || "http://localhost:3000")
+  .split(",")
+  .map((s) => s.trim().replace(/\/$/, ""))
+  .filter(Boolean);
+
+app.use(cors({
+  origin(origin, cb) {
+    // No Origin header: curl, server-to-server, same-origin navigations.
+    if (!origin) return cb(null, true);
+    const clean = origin.replace(/\/$/, "");
+    if (allowedOrigins.includes("*") || allowedOrigins.includes(clean)) return cb(null, true);
+    if (/^http:\/\/localhost:\d+$/.test(clean) || /^http:\/\/127\.0\.0\.1:\d+$/.test(clean)) return cb(null, true);
+    return cb(null, false);
+  },
+  credentials: true,
+}));
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// ── Health check ─────────────────────────────────────────
+// Registered before every other route so it always answers, even when the
+// deployment is misconfigured. It is the first thing to check when the
+// frontend shows a blank page.
+app.get("/api/health", (_req, res) => {
+  const databaseOk = !supabaseBootError;
+  const ok = envAudit.ok && databaseOk;
+
+  res.status(ok ? 200 : 503).json({
+    status: ok ? "ok" : "degraded",
+    timestamp: new Date().toISOString(),
+    config: envAudit.ok
+      ? { ok: true }
+      : { ok: false, problems: envAudit.problems },
+    database: databaseOk
+      ? { ok: true }
+      : { ok: false, error: supabaseBootError },
+  });
+});
+
+// ── Misconfiguration gate ───────────────────────────────
+// A missing variable is reported instead of crashing the function: on Vercel
+// a crash at import time answers every route with FUNCTION_INVOCATION_FAILED
+// and no clue about the cause.
+app.use((req, res, next) => {
+  if (envAudit.ok) return next();
+  res.status(503).json({
+    error: "Server misconfigured: required environment variables are missing",
+    problems: envAudit.problems,
+  });
+});
+
+// ── Routes ───────────────────────────────────────────────
+app.use("/api/auth",         authRoutes);
+app.use("/api/institutions", institutionRoutes);
+app.use("/api/certificates", certificateRoutes);
+app.use("/api/verify",       verifyRoutes); // public, rate-limited, chain-authoritative
+
+// 404 handler
+app.use((_, res) => res.status(404).json({ error: "Route not found" }));
+
+// Global error handler (multer / Joi / Postgres violations land here)
+app.use(errorHandler);
+
+// ── Start (local only) ───────────────────────────────────
+if (!process.env.VERCEL) {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+}
+
+// ── Shutdown ─────────────────────────────────────────────
+// The OCR engine runs in a worker thread. Terminating the process while that
+// thread is still alive trips a libuv assertion, so the worker is closed
+// first. On Vercel the process is frozen rather than killed, and the worker
+// resumes with the next request.
+for (const signal of ["SIGINT", "SIGTERM"]) {
+  process.on(signal, async () => {
+    console.log(`\n[shutdown] ${signal} — closing the OCR worker`);
+    try {
+      const { shutdownExtraction } = await import("./services/certificateExtraction.js");
+      await shutdownExtraction();
+    } catch {
+      /* the worker is going away anyway */
+    }
+    process.exit(0);
+  });
+}
+
+export default app;

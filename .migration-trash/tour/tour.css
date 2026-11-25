@@ -1,0 +1,413 @@
+/* ══════════════════════════════════════════════════════════════
+   Guided walkthrough — spotlight, card, launchers, welcome prompt.
+   Zero dependencies: the cut-out is an oversized box-shadow on a
+   fixed rectangle, and every movement is a CSS transition.
+
+   The motion follows one rule: nothing blinks. The spotlight travels
+   from one element to the next and the card glides after it, so a
+   step change reads as one continuous movement rather than a cut.
+   ══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* One easing curve for the whole tour, so every movement feels
+     like it belongs to the same hand. */
+  --tour-ease: cubic-bezier(.22, .61, .36, 1);
+  --tour-ease-soft: cubic-bezier(.4, 0, .2, 1);
+  --tour-move: 480ms;
+  --tour-swap: 420ms;
+  --tour-fade: 300ms;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Spotlight ───────────────────────────────────────────── */
+
+.tour-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  pointer-events: none;
+}
+
+.tour-spotlight {
+  position: fixed;
+  border-radius: 14px;
+  box-shadow: 0 0 0 9999px rgba(24, 26, 30, .62);
+  pointer-events: none;
+  opacity: 0;
+  transition:
+    top var(--tour-move) var(--tour-ease),
+    left var(--tour-move) var(--tour-ease),
+    width var(--tour-move) var(--tour-ease),
+    height var(--tour-move) var(--tour-ease),
+    opacity var(--tour-fade) var(--tour-ease-soft);
+}
+
+.tour-spotlight.is-visible {
+  opacity: 1;
+}
+
+/* The outline fades away while the hole is travelling, so the eye
+   follows the movement instead of a ring sitting on the wrong
+   element, and settles back once it lands. */
+.tour-spotlight-ring {
+  position: absolute;
+  inset: -2px;
+  border-radius: 16px;
+  border: 2px solid rgba(255, 255, 255, .85);
+  animation: tour-pulse 2.8s var(--tour-ease-soft) infinite;
+  transition: opacity var(--tour-fade) var(--tour-ease-soft);
+}
+
+.tour-spotlight.is-moving .tour-spotlight-ring {
+  opacity: 0;
+  animation: none;
+}
+
+@keyframes tour-pulse {
+  0%, 100% {
+    opacity: .45;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: .9;
+    transform: scale(1.008);
+  }
+}
+
+/* ── Card ────────────────────────────────────────────────── */
+
+.tour-tooltip {
+  position: fixed;
+  z-index: 1001;
+  width: 340px;
+  max-width: calc(100vw - 32px);
+  padding: 18px 20px 16px;
+  background: var(--surface);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  box-shadow: 0 24px 60px rgba(24, 26, 30, .28);
+  opacity: 0;
+  transform: scale(.96);
+  transform-origin: top left;
+  transition:
+    opacity var(--tour-fade) var(--tour-ease-soft),
+    transform var(--tour-fade) var(--tour-ease),
+    left var(--tour-move) var(--tour-ease),
+    top var(--tour-move) var(--tour-ease);
+}
+
+.tour-tooltip.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* The copy swaps with a short rise, so the card reads as one card
+   being re-read rather than a panel blinking out and back in. */
+.tour-card-body {
+  animation: tour-card-in var(--tour-swap) var(--tour-ease) both;
+}
+
+.tour-progress {
+  height: 3px;
+  border-radius: 99px;
+  background: var(--surface-sunken);
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.tour-progress-fill {
+  display: block;
+  height: 100%;
+  border-radius: 99px;
+  background: var(--primary-action);
+  transition: width var(--tour-move) var(--tour-ease);
+}
+
+.tour-tooltip-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.tour-tooltip-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.35;
+  margin: 0;
+}
+
+.tour-counter {
+  flex-shrink: 0;
+  font-size: .72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: var(--surface-muted);
+  border: 1px solid var(--card-border);
+  border-radius: 99px;
+  padding: 2px 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.tour-tooltip-body {
+  font-size: .86rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0 0 16px;
+}
+
+.tour-tooltip-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tour-tooltip-actions .btn {
+  gap: 6px;
+}
+
+/* ── Welcome prompt ──────────────────────────────────────── */
+
+.tour-welcome-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(24, 26, 30, .58);
+  backdrop-filter: blur(2px);
+  animation: tour-fade var(--tour-fade) var(--tour-ease-soft) both;
+}
+
+.tour-welcome {
+  width: min(440px, 100%);
+  background: var(--surface);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 24px 60px rgba(24, 26, 30, .3);
+  animation: tour-rise var(--tour-swap) var(--tour-ease) both;
+}
+
+.tour-welcome-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-muted);
+  border: 1px solid var(--card-border);
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.tour-welcome h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 10px;
+}
+
+.tour-welcome p {
+  font-size: .88rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin: 0 0 12px;
+}
+
+.tour-welcome-note {
+  font-size: .82rem;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--surface-muted);
+  border: 1px solid var(--card-border);
+  color: var(--text-primary) !important;
+}
+
+.tour-welcome-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+.tour-welcome-actions .btn {
+  gap: 7px;
+}
+
+/* ── Launchers ───────────────────────────────────────────── */
+
+.tour-launcher-sidebar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 10px;
+  padding: 9px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: .84rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .18s ease, border-color .18s ease;
+}
+
+.tour-launcher-sidebar:hover {
+  background: var(--surface-muted);
+  border-color: var(--text-muted);
+}
+
+.tour-launcher-help {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid var(--card-border);
+  background: var(--surface);
+  color: var(--text-muted);
+  cursor: pointer;
+  margin-left: 10px;
+  flex-shrink: 0;
+  transition: color .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.tour-launcher-help:hover {
+  color: var(--text-primary);
+  border-color: var(--text-muted);
+  background: var(--surface-muted);
+}
+
+.tour-launcher-help.is-corner {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  margin-left: 0;
+  z-index: 2;
+}
+
+.tour-launcher-floating {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 99px;
+  border: 1px solid var(--card-border);
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: .84rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(24, 26, 30, .14);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.tour-launcher-floating:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 34px rgba(24, 26, 30, .2);
+}
+
+/* ── Motion ──────────────────────────────────────────────── */
+
+@keyframes tour-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes tour-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* The step copy rising into place. */
+@keyframes tour-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ── Small screens ───────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .tour-tooltip {
+    left: 12px !important;
+    right: 12px;
+    top: auto !important;
+    bottom: 12px;
+    width: auto;
+    max-height: 45vh;
+    overflow-y: auto;
+    transform-origin: bottom center;
+  }
+
+  .tour-launcher-floating {
+    right: 12px;
+    bottom: 12px;
+  }
+}
+
+/* ── Reduced motion ──────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .tour-spotlight,
+  .tour-tooltip,
+  .tour-card-body,
+  .tour-progress-fill,
+  .tour-spotlight-ring,
+  .tour-launcher-floating,
+  .tour-launcher-help,
+  .tour-launcher-sidebar,
+  .tour-welcome,
+  .tour-welcome-backdrop {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .tour-spotlight-ring {
+    opacity: .8;
+  }
+}

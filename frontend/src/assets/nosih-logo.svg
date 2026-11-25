@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- NOSIH mark: N monogram — black left stroke + diagonal, grey right stroke -->
+  <path d="M10 6 H22 L42 40 V6 H54 V58 H42 L22 24 V58 H10 Z" fill="#16181D"/>
+  <rect x="42" y="6" width="12" height="52" fill="#6E7681"/>
+</svg>

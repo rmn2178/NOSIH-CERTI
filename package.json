@@ -1,0 +1,47 @@
+{
+  "name": "nosih-contracts",
+  "version": "1.0.0",
+  "description": "NOSIH — CertificateRegistry contract, deployment tooling, and live-readiness gates",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "abi:generate": "node scripts/generateAbi.js",
+    "deploy:amoy": "node scripts/hardhat-live.mjs deploy.js",
+    "issuer:add": "node scripts/hardhat-live.mjs addIssuer.js",
+    "issuer:remove": "node scripts/hardhat-live.mjs removeIssuer.js",
+    "seed:admin": "node backend/scripts/seedAdmin.js",
+    "schema:apply": "node scripts/apply-schema.mjs",
+    "schema:migrate": "node scripts/apply-schema.mjs --migration",
+    "setup:institution": "node scripts/setup-institution.mjs",
+    "smoke:api": "node backend/scripts/smokeP2.js",
+    "check:env": "node scripts/check-env.js",
+    "check:gas": "node scripts/check-gas.mjs",
+    "check:chain": "node scripts/check-chain.mjs",
+    "check:services": "node scripts/check-services.js",
+    "check:jwt": "node scripts/diagnose-pinata-jwt.js",
+    "check:ipfs": "node scripts/test-ipfs-service.mjs",
+    "check:extract": "node --env-file=.env scripts/check-extraction.mjs",
+    "check:pdf": "node backend/scripts/checkPdfRender.js",
+    "check:boot": "node scripts/check-boot-report.mjs",
+    "check:login": "node scripts/check-login.mjs",
+    "check:ui-failure": "node scripts/check-ui-failure.mjs",
+    "check:ui-render": "node scripts/check-ui-render.mjs",
+    "check:p2": "node backend/scripts/checkP2.js",
+    "check:p4": "node backend/scripts/checkP4.js",
+    "check:p5": "node backend/scripts/checkP5.js",
+    "check:p6": "node backend/scripts/checkP6.js",
+    "check:p7": "node backend/scripts/checkP7.js",
+    "check:p8": "node backend/scripts/checkP8.js",
+    "check:deploy": "node scripts/vercel-preflight.mjs",
+    "vercel:env": "node scripts/vercel-env.mjs",
+    "vercel:deploy": "node scripts/vercel-deploy.mjs"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.19.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.0",
+    "dotenv": "^16.3.1"
+  }
+}
